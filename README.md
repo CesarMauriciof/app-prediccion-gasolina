@@ -1,51 +1,65 @@
 # ⛽ Aplicación Web: Predicción del Precio de la Gasolina
 
-Esta aplicación web construida con **Streamlit** y **scikit-learn** permite predecir el precio mensual de la gasolina (en USD/galón y COP/galón) a partir de variables macroeconómicas, energéticas y geopolíticas, utilizando un modelo de regresión lineal calibrado con intervalos de confianza y predicción al 95%.
-<img width="1352" height="649" alt="WhatsApp Image 2026-10-13 at 1 01 44 PM" src="https://github.com/user-attachments/assets/38616585-b82d-4bfb-8dca-6229b6ab2cf9" />
+Aplicación web interactiva desarrollada con **Streamlit** para predecir el precio mensual de la gasolina (USD/galón y COP/galón) a partir de variables macroeconómicas y energéticas. La aplicación está desplegada en Streamlit Community Cloud — el enlace público se encuentra en la descripción del repositorio.
 
----
+Resumen de por qué incluir este proyecto en tu portafolio:
 
-## 🚀 Cómo Ejecutar la Aplicación en Local
+- Proyecto end-to-end: recolección y limpieza de datos, análisis exploratorio (EDA), ingeniería de variables, entrenamiento y evaluación de modelos, y despliegue web.
+- Modelo entrenado por nosotros: el pipeline incluye preprocesamiento (escalado, codificación), selección de características y validación cruzada.
+- Visualizaciones y métricas claras para explicar el desempeño y la robustez del modelo.
+- Interfaz interactiva en Streamlit que permite probar escenarios (cambio en precio del petróleo, tipo de cambio, impuestos, eventos geopolíticos, etc.).
 
-### Opción 1: Un solo clic en Windows (Más fácil)
-Haz doble clic sobre el archivo:
-- `iniciar_app.bat`
+Demo en vivo
 
-El navegador se abrirá automáticamente en `http://localhost:8501`.
+- Despliegue: Streamlit Community Cloud
+- Enlace público: (ver descripción del repositorio)
 
----
+Qué hice en este proyecto
 
-### Opción 2: Desde la terminal / PowerShell
+- Análisis exploratorio de los datos (visualizaciones, detección de outliers, correlaciones).
+- Ingeniería de features (lags, normalizaciones, variables dummy para eventos geopolíticos).
+- Entrenamiento de modelos con scikit-learn, comparación de alternativas y ajuste de hiperparámetros.
+- Validación cruzada y separación robusta entre train/test para evitar fugas de información.
+- Serialización del modelo final (modelo + scaler + metadatos) en `modelo_gasolina.pkl`.
+- Diseño de la app Streamlit para exposición clara de inputs, resultados y gráficos.
 
-1. **Activar el entorno virtual:**
-   ```powershell
-   .\.venv\Scripts\activate
-   ```
-2. **Iniciar la aplicación:**
-   ```powershell
-   streamlit run app.py
-   ```
-3. O directamente con el script PowerShell:
-   ```powershell
-   .\iniciar_app.ps1
-   ```
+Características principales
 
----
+- Interfaz amigable con controles para cada variable de entrada.
+- Gráficas de sensibilidad y predicciones con intervalos.
+- Métricas del modelo presentadas (R², RMSE, MAE) y explicación breve de su interpretación.
 
-## 🌐 Cómo Publicarla en la Web (Gratis en la Nube)
+Tecnologías
 
-Puedes desplegar esta aplicación web de manera gratuita para que cualquier persona acceda mediante un enlace público:
+- Python, Streamlit, scikit-learn, pandas, numpy, matplotlib / seaborn
+- Empaquetado del modelo: pickle
 
-### Método Recomendado: Streamlit Community Cloud
-1. Sube este proyecto a un repositorio de **GitHub** (ejemplo: `usuario/app-prediccion-gasolina`).
-2. Entra a [share.streamlit.io](https://share.streamlit.io) e inicia sesión con GitHub.
-3. Haz clic en **"New app"**.
-4. Selecciona tu repositorio, rama `main` y el archivo principal: `app.py`.
-5. Haz clic en **"Deploy"** ¡y listo! Streamlit instalará automáticamente las dependencias de `requirements.txt` y generará la URL pública.
+Cómo ejecutar la aplicación localmente
 
----
+Opción 1: Un solo clic en Windows
+- Haz doble clic sobre el archivo `iniciar_app.bat`.
 
-## 📁 Estructura del Proyecto
+Opción 2: Desde la terminal / PowerShell
+1. Activar el entorno virtual:
+```powershell
+.\.venv\Scripts\activate
+```
+2. Iniciar la aplicación:
+```powershell
+streamlit run app.py
+```
+3. O usar el script PowerShell:
+```powershell
+.\iniciar_app.ps1
+```
+
+Despliegue en la nube (opcional)
+
+Recomendado: Streamlit Community Cloud
+1. Sube este repositorio a GitHub.
+2. Entra a https://share.streamlit.io y crea una nueva app apuntando a `app.py` en la rama `main`.
+
+Estructura del proyecto
 
 ```text
 app-web-predeccion-gasolina/
@@ -58,12 +72,10 @@ app-web-predeccion-gasolina/
 ├── README.md                  # Documentación del proyecto
 ├── .streamlit/
 │   └── config.toml            # Configuración de Streamlit (puerto, tema, etc.)
-└── .venv/                     # Entorno virtual de Python configurado
+└── .venv/                     # Entorno virtual de Python (no incluir en el repo)
 ```
 
----
-
-## 📊 Variables del Modelo
+Variables clave del modelo
 
 | Variable | Descripción | Rango habitual |
 | :--- | :--- | :--- |
@@ -75,11 +87,22 @@ app-web-predeccion-gasolina/
 | **Impuestos a combustibles** | Carga tributaria sobre el combustible (%) | 18.0% – 30.0% |
 | **Eventos Geopolíticos** | Conflictos o tensiones que afecten el suministro | Sí / No (1 / 0) |
 
+Métricas del modelo
+
+- R² en prueba: ~0.921
+- R² (Validación Cruzada): ~0.898
+- RMSE: ~0.236 USD/galón
+- MAE: ~0.195 USD/galón
+
+Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+Contacto
+
+- Autor: CesarMauriciof
+- GitHub: https://github.com/CesarMauriciof/app-prediccion-gasolina
+
 ---
 
-## 🎯 Métricas del Modelo
-
-- **R² en prueba:** ~0.921
-- **R² (Validación Cruzada):** ~0.898
-- **RMSE:** ~0.236 USD/galón
-- **MAE:** ~0.195 USD/galón
+_P.D.: Si quieres que incluya la URL pública exacta del despliegue (en Streamlit u otro servicio), pásamela y la actualizo en el README._
