@@ -1,4 +1,4 @@
-# ⛽ Aplicación Web: Predicción del Precio de la Gasolina
+# Aplicación Web: Predicción del Precio de la Gasolina
 
 Aplicación web interactiva desarrollada con **Streamlit** para predecir el precio mensual de la gasolina (USD/galón y COP/galón) a partir de variables macroeconómicas y energéticas. La aplicación está desplegada en Streamlit Community Cloud — el enlace público se encuentra en la descripción del repositorio.
 
