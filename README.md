@@ -1,6 +1,7 @@
 # ⛽ Aplicación Web: Predicción del Precio de la Gasolina
 
 Esta aplicación web construida con **Streamlit** y **scikit-learn** permite predecir el precio mensual de la gasolina (en USD/galón y COP/galón) a partir de variables macroeconómicas, energéticas y geopolíticas, utilizando un modelo de regresión lineal calibrado con intervalos de confianza y predicción al 95%.
+<img width="1352" height="649" alt="WhatsApp Image 2026-10-13 at 1 01 44 PM" src="https://github.com/user-attachments/assets/38616585-b82d-4bfb-8dca-6229b6ab2cf9" />
 
 ---
 
