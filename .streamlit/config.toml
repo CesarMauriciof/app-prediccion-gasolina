@@ -1,5 +1,10 @@
 [server]
-headless = false
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
+[client]
+showErrorDetails = "full"
 
 [browser]
 gatherUsageStats = false
