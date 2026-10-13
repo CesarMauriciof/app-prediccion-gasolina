@@ -2,6 +2,9 @@
 
 Aplicación web interactiva desarrollada con **Streamlit** para predecir el precio mensual de la gasolina (USD/galón y COP/galón) a partir de variables macroeconómicas y energéticas. La aplicación está desplegada en Streamlit Community Cloud — el enlace público se encuentra en la descripción del repositorio.
 
+<img width="1352" height="649" alt="WhatsApp Image 2026-10-13 at 1 01 44 PM" src="https://github.com/user-attachments/assets/ae64805f-b857-461f-b3b1-ba279ce8ce94" />
+
+
 Resumen:
 
 - Proyecto end-to-end: recolección y limpieza de datos, análisis exploratorio (EDA), ingeniería de variables, entrenamiento y evaluación de modelos, y despliegue web.
